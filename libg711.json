@@ -1,18 +1,25 @@
 {
     "name": "libg711",
-    "description": "G.711 A-law and mu-law decoder",
-    "filters":["g711dec","rfg711"],
-    "help": "This filter decodes ITU-T G.711 audio, both A-law and mu-law, to raw 16-bit PCM.",
+    "description": "G.711, G.721 and G.723 decoder (Sun .au)",
+    "filters": [
+        "g711dec",
+        "rfg711",
+        "audec"
+    ],
+    "help": "This filter decodes Sun/NeXT .au files carrying G.711 mu-law or A-law, or G.721 and G.723 ADPCM, to raw 16-bit PCM.",
     "support": [
         "audio"
     ],
-    "sources":"https://bevara.ddns.net/sources/libg711.accessor",
-    "filter_source":{
-        "g711dec" : "dec_g711.c",
-        "rfg711" : "reframe_g711.c"
+    "sources": "https://bevara.ddns.net/sources/libg711.accessor",
+    "filter_source": {
+        "g711dec": "dec_g711.c",
+        "rfg711": "reframe_g711.c",
+        "audec": "dec_au.c"
     },
-    "extension":{
-      "wav" : "audio"
+    "extension": {
+        "au": "audio",
+        "snd": "audio",
+        "wav": "audio"
     },
-    "licence_required":false
+    "licence_required": false
 }

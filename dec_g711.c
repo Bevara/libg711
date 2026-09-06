@@ -46,7 +46,11 @@ static s16 g711_alaw_to_s16(u8 a)
 	if (exponent != 0)
 		sample = (sample + 256) << (exponent - 1);
 
-	return (s16)(sign ? -sample : sample);
+	/* A-law inverts the polarity convention: the sign bit is 1 for POSITIVE
+	 * values, the opposite of mu-law. Getting this backwards produces audio
+	 * that is exactly the negation of the right answer - which sounds
+	 * identical, and only a sample-level comparison catches it. */
+	return (s16)(sign ? sample : -sample);
 }
 
 /* mu-law, G.711 table 2: the byte is stored inverted, then read as sign,
