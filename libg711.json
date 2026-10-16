@@ -1,5 +1,6 @@
 {
     "name": "libg711",
+    "version": "1.0.1",
     "description": "G.711, G.721 and G.723 decoder (Sun .au)",
     "filters": [
         "g711dec",
