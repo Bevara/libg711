@@ -1,6 +1,6 @@
 {
     "name": "libg711",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "G.711, G.721 and G.723 decoder (Sun .au)",
     "filters": [
         "g711dec",
@@ -22,7 +22,7 @@
         "snd": "audio",
         "wav": "audio"
     },
-    "using": ["solver_minimal_1", "solver_1"],
+    "using": ["mm_solver_minimal_1.0.1", "mm_solver_1.0.1"],
     "patents": {
         "status": "expired",
         "note": "ITU-T G.711, G.72x",
